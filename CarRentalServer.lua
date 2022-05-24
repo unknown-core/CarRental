@@ -1,11 +1,11 @@
-ESX = nil
+QBCore = nil 
 
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 RegisterServerEvent("chargePlayer")
 AddEventHandler("chargePlayer", function(chargeAmount)
-     local xPlayer        = ESX.GetPlayerFromId(source)
-     xPlayer.removeMoney(chargeAmount)
+     local Player = QBCore.Functions.GetPlayer(src)
+     Player.Functions.RemoveMoney(chargeAmount)
      CancelEvent()
 end)
 
