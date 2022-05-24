@@ -299,7 +299,7 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(rentalTimer*60*1000)
-		if isBeingCharged == true then
+		if isBeingCharged == true and  IsVehicleModel(GetVehiclePedIsIn(GetPlayerPed(-1), true), GetHashKey("faggio")) thenthen
 			TriggerServerEvent("chargePlayer", autoChargeAmount)
 			ESX.ShowNotification("You've been charged $" .. autoChargeAmount .. " on another day of your rental. Return the vehicle to stop the fees.")
 		end
