@@ -276,9 +276,9 @@ Citizen.CreateThread(function()
 				if (IsVehicleDamaged(currentVehicle) and damageInsurance == false and damageCharge == false and canBeCharged == true) then
 					damageCharge = true
 					TriggerServerEvent("chargePlayer", 500)
-					ESX.ShowNotification("You've been charged $500 for damaging the car. Buying insurance will keep you from being charged.")
+					QBCore.Functions.Notify("You've been charged $500 for damaging the car. Buying insurance will keep you from being charged.")
 				elseif (damageInsurance == true and IsVehicleDamaged(currentVehicle) and damageCharge == false) then
-					ESX.ShowNotification("You've damaged your vehicle but due to the insurance you won't be charged.")
+					QBCore.Functions.Notify("You've damaged your vehicle but due to the insurance you won't be charged.")
 					damageCharge = true
 				end
 			end
@@ -301,7 +301,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(rentalTimer*60*1000)
 		if isBeingCharged == true then
 			TriggerServerEvent("chargePlayer", autoChargeAmount)
-			ESX.ShowNotification("You've been charged $" .. autoChargeAmount .. " on another day of your rental. Return the vehicle to stop the fees.")
+			QBCore.Functions.Notify("You've been charged $" .. autoChargeAmount .. " on another day of your rental. Return the vehicle to stop the fees.")
 		end
 	end
 end)
@@ -349,8 +349,8 @@ Citizen.CreateThread(function()
 		if(GetDistanceBetweenCoords(coords, 1677.2429199219, 2658.6179199219, 44.560031890869, true) < 2.75 and isInPrison == false) then
 			sleep = false
 			isInPrison = true
-			ESX.ShowNotification("Our records show that you are currently in prison.")
-			ESX.ShowNotification("We've taken the liberty to cancel the rental.")
+			QBCore.Functions.Notify("Our records show that you are currently in prison.")
+			QBCore.Functions.Notify("We've taken the liberty to cancel the rental.")
 			isBeingCharged = false
 			damageInsurance = false
 			damageCharge = false
