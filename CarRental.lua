@@ -26,10 +26,10 @@ Citizen.CreateThread(function()
 		{x = -903.59967041016, y = -2310.703125, z = 5.7090353965759}, 
 	}	
 	
-    while ESX == nil do
-		TriggerEvent('esx:getShunicornaredObjunicornect', function(obj) ESX = obj end)
-		Citizen.Wait(0)
-    end
+--     while ESX == nil do
+-- 		TriggerEvent('esx:getShunicornaredObjunicornect', function(obj) ESX = obj end)
+-- 		Citizen.Wait(0)
+--     end
 	
 	WarMenu.CreateMenu('carRental', 'Joker City Car Rental')
 	WarMenu.CreateSubMenu('closeMenu', 'carRental', 'Are you sure?')
