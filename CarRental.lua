@@ -299,9 +299,6 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		
-		local plate = GetVehicleNumberPlateText(currentVehicle)
-
-		if IsVehicleModel(GetVehiclePedIsIn(GetPlayerPed(-1), true), GetHashKey("faggio")) and plate == " RENTAL " then
 			Citizen.Wait(rentalTimer*60*1000)
 			if isBeingCharged == true then
 				TriggerServerEvent("chargePlayer", autoChargeAmount)
