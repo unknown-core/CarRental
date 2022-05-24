@@ -1,7 +1,7 @@
 rentalTimer = .5 --How often a player should be charged in Minutes
 isBeingCharged = false
 autoChargeAmount = 100 -- How much a player should be charged each time
-ESX = nil
+local QBCore = exports['qb-core']:GetCoreObject()
 devMode = false
 damageInsurance = false
 damageCharge = false
