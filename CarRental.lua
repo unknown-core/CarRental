@@ -32,7 +32,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0) -- Saniye Bekletme
 	end
 	
-	WarMenu.CreateMenu('carRental', 'Joker City Car Rental')
+	WarMenu.CreateMenu('carRental', 'Car Rental')
 	WarMenu.CreateSubMenu('closeMenu', 'carRental', 'Are you sure?')
 	WarMenu.CreateSubMenu('carPicker', 'carRental', 'Pick a car | 1 day about ' .. rentalTimer ..  ' minutes')
 	WarMenu.CreateSubMenu('carInsurance', 'carRental', 'Want to buy car insurance?')
