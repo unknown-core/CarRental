@@ -298,10 +298,15 @@ end)
 --Auto charge player every 5 minutes
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(rentalTimer*60*1000)
-		if isBeingCharged == true then
-			TriggerServerEvent("chargePlayer", autoChargeAmount)
-			QBCore.Functions.Notify("You've been charged $" .. autoChargeAmount .. " on another day of your rental. Return the vehicle to stop the fees.")
+		
+		local plate = GetVehicleNumberPlateText(currentVehicle)
+
+		if IsVehicleModel(GetVehiclePedIsIn(GetPlayerPed(-1), true), GetHashKey("faggio")) and plate == " RENTAL " then
+			Citizen.Wait(rentalTimer*60*1000)
+			if isBeingCharged == true then
+				TriggerServerEvent("chargePlayer", autoChargeAmount)
+				QBCore.Functions.Notify("You've been charged $" .. autoChargeAmount .. " on another day of your rental. Return the vehicle to stop the fees.")
+			end
 		end
 	end
 end)
