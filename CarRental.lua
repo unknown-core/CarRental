@@ -90,9 +90,6 @@ Citizen.CreateThread(function()
 			if WarMenu.Button('Faggio | Upfront: $100 | Daily: $100') then
 				SpawnVehicle("faggio")
 				TriggerServerEvent("chargePlayer", 100)
-
-
-   				exports["LegacyFuel"]:SetFuel(100)
 				QBCore.Functions.Notify("You've been charged $100 for your rental.")
 				autoChargeAmount = 100
 				isBeingCharged = true
