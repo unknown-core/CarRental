@@ -4,6 +4,7 @@ TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 RegisterServerEvent("chargePlayer")
 AddEventHandler("chargePlayer", function(chargeAmount)
+     local src = source
      local Player = QBCore.Functions.GetPlayer(src)
      Player.Functions.RemoveMoney('bank', money,chargeAmount)
      CancelEvent()
