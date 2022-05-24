@@ -11,7 +11,7 @@ arrestCheckAlreadyRan = false
 isInPrison = false
 isBlipCreated = false
 
-
+local Player = QBCore.Functions.GetPlayer(src)
 Citizen.CreateThread(function()
 	local items = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" }
 	local currentItemIndex = 1
@@ -26,10 +26,10 @@ Citizen.CreateThread(function()
 		{x = -903.59967041016, y = -2310.703125, z = 5.7090353965759}, 
 	}	
 	
---     while ESX == nil do
--- 		TriggerEvent('esx:getShunicornaredObjunicornect', function(obj) ESX = obj end)
--- 		Citizen.Wait(0)
---     end
+	while QBCore == nil do
+		TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+		Citizen.Wait(0) -- Saniye Bekletme
+	   end
 	
 	WarMenu.CreateMenu('carRental', 'Joker City Car Rental')
 	WarMenu.CreateSubMenu('closeMenu', 'carRental', 'Are you sure?')
