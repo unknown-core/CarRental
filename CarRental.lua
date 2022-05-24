@@ -332,7 +332,7 @@ function returnVehicle()
 			isBeingCharged = false
 			damageInsurance = false
 			damageCharge = false
-			ESX.ShowNotification("Thank you for returning your rental. Please come again!")
+			QBCore.Functions.Notify("Thank you for returning your rental. Please come again!")
 			local currentVehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
 			SetEntityAsMissionEntity(currentVehicle, true, true)
 			local x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
