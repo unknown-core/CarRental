@@ -6,7 +6,7 @@ RegisterServerEvent("chargePlayer")
 AddEventHandler("chargePlayer", function(chargeAmount)
      local src = source
      local Player = QBCore.Functions.GetPlayer(src)
-     Player.Functions.RemoveMoney('bank', money,chargeAmount)
+     Player.Functions.RemoveMoney('bank', chargeAmount,"Bank depost")
      CancelEvent()
 end)
 
