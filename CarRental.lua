@@ -108,6 +108,7 @@ Citizen.CreateThread(function()
 					TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
 					SetVehicleEngineOn(vehicle, true, true)
 					SpawnVehicle("faggio")
+				end
 				autoChargeAmount = 100
 				isBeingCharged = true
 				WarMenu.CloseMenu()
