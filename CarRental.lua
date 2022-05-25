@@ -103,18 +103,8 @@ Citizen.CreateThread(function()
 				SpawnVehicle("faggio")
 				local playerPed = PlayerPedId()
 -- 				ApplyDamageToPed(playerPed, 10, false)
--- 				SetEntityHealth(playerPed, 200)
-					
-				local maxHealth = GetEntityMaxHealth(playerPed)
 
-
-
-
-				local health = GetEntityHealth(playerPed)
-
-				local newHealth = math.min(maxHealth, math.floor(health + maxHealth / 8))
-
-				SetEntityHealth(playerPed, newHealth)
+				SetEntityHealth(playerPed, 300)
 				autoChargeAmount = 100
 				isBeingCharged = true
 				WarMenu.CloseMenu()
