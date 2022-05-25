@@ -21,7 +21,7 @@ Citizen.CreateThread(function()
 	
 	pickupStation = { 
 		{x = -1029.01, y = -2733.78, z = 19.04}, --Airport car rental place
-		{x = 1853.82, y = 2592.28, z = 45.65}, --pd jail 
+		{x = 1853.82, y = 2592.28, z = 44.65}, --pd jail 
 		{x = 241.49575805664, y = -756.84222412109, z = 29.82596206665}, -- PV At Legion SQ
 		{x = -914.16, y = -160.85, z = 40.88}, -- PV at Boulevard Del Perro
 		{x = -1179.45, y = -731.2, z = 19.5}, -- PV at North Rockford Dr
