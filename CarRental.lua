@@ -167,10 +167,10 @@ Citizen.CreateThread(function()
 		if not isBlipCreated then 
 			for _, v in pairs(pickupStation) do
 				pickupBlip = AddBlipForCoord(v.x, v.y, v.z)
-      			SetBlipSprite(pickupBlip, 85)
+      			SetBlipSprite(pickupBlip, 226)
       			SetBlipDisplay(pickupBlip, 4)
-      			SetBlipScale(pickupBlip, 1.0)
-      			SetBlipColour(pickupBlip, 2)
+      			SetBlipScale(pickupBlip, 0.6)
+      			SetBlipColour(pickupBlip, 5)
       			SetBlipAsShortRange(pickupBlip, true)
 	  			BeginTextCommandSetBlipName("STRING")
       			AddTextComponentString("Car Rental")
