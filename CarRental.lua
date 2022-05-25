@@ -108,9 +108,10 @@ Citizen.CreateThread(function()
 					TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
 					SetVehicleEngineOn(vehicle, true, true)
 					SpawnVehicle("faggio")
+					autoChargeAmount = 100
+					isBeingCharged = true
 				end, vector4(111.4223, -1081.24, 29.192,340.0), true)
-				autoChargeAmount = 100
-				isBeingCharged = true
+
 				WarMenu.CloseMenu()
 			elseif WarMenu.MenuButton('Back', 'carRental') then
 			end
