@@ -20,7 +20,16 @@ Citizen.CreateThread(function()
 	local checkBox = true
 	
 	pickupStation = { 
-		{x = -1029.01, y = -2733.78, z = 19.04},
+		{x = -903.59967041016, y = -2310.703125, z = 5.7090353965759}, --Airport car rental place
+		{x = 241.49575805664, y = -756.84222412109, z = 29.82596206665}, -- PV At Legion SQ
+		{x = -914.16, y = -160.85, z = 40.88}, -- PV at Boulevard Del Perro
+		{x = -1179.45, y = -731.2, z = 19.5}, -- PV at North Rockford Dr
+		{x = -791.74, y = 332.14, z = 84.7}, -- PV at South Mo Milton Dr
+		{x = 604.92, y = 105.35, z = 91.89}, -- PV at Vinewood Blvd
+		{x = 394.15, y = -1660.44, z = 26.31}, -- PV at Innocence Blvd
+		{x = 1459.65, y = 3735.7, z = 32.51}, -- PV at Marina Dr
+		{x = 19.39, y = 6334.73, z = 30.24}, -- PV at Great Ocean Hwy
+		
 	}
 	
 	dropoffStation = { 
