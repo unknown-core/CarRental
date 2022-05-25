@@ -105,7 +105,7 @@ Citizen.CreateThread(function()
 -- 				ApplyDamageToPed(playerPed, 10, false)
 				local b = GetEntityHealth(playerPed)
 				print(b)
-				SetEntityHealth(playerPed, -50)
+				SetEntityHealth(playerPed, 150)
 				autoChargeAmount = 100
 				isBeingCharged = true
 				WarMenu.CloseMenu()
