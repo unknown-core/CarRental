@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
 	local checkBox = true
 	
 	pickupStation = { 
-		{x = -1030.46, y = -2725.96, z = 10}, --Airport car rental place
+		{x = -1030.46, y = -2725.96, z = 11}, --Airport car rental place
 		{x = 241.49575805664, y = -756.84222412109, z = 29.82596206665}, -- PV At Legion SQ
 		{x = -914.16, y = -160.85, z = 40.88}, -- PV at Boulevard Del Perro
 		{x = -1179.45, y = -731.2, z = 19.5}, -- PV at North Rockford Dr
