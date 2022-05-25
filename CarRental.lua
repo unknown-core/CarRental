@@ -178,7 +178,7 @@ Citizen.CreateThread(function()
 			end
 			for _, v in pairs(dropoffStation) do
 				pickupBlip = AddBlipForCoord(v.x, v.y, v.z)
-      			SetBlipSprite(pickupBlip, 85)
+      			SetBlipSprite(pickupBlip, 226)
       			SetBlipDisplay(pickupBlip, 3)
       			SetBlipScale(pickupBlip, 0.60)
       			SetBlipColour(pickupBlip, 1)
