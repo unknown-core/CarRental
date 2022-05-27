@@ -161,7 +161,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 	end	
 	
-
+end)
 --Draw map blips
 Citizen.CreateThread(function()
 	while true do
