@@ -338,7 +338,7 @@ function SpawnVehicle(request)
 			canBeCharged = true
 			arrestCheckAlreadyRan = false
 			isInPrison = false
-			TriggerEvent('vehiclekeys:client:SetOwner', vehicle))
+			TriggerEvent('vehiclekeys:client:SetOwner', vehicle)
 			TaskWarpPedIntoVehicle(GetPlayerPed(-1),vehicle,-1)
 end
 
