@@ -27,7 +27,7 @@ RegisterNetEvent('qb-rental:openMenu', function()
         },
         {
             id = 1,
-            header = "Asterope",
+            header = "Faggio",
             txt = "$250.00",
             params = {
                 event = "qb-rental:spawncar",
@@ -154,6 +154,7 @@ Citizen.CreateThread(function()
 		elseif WarMenu.IsMenuOpened('carInsurance') then
 			if WarMenu.Button('Yes | $200') then
 				TriggerServerEvent("chargePlayer", 200)
+				TriggerServerEvent("qb-rental:spawncar")
 				damageInsurance = true
 				QBCore.Functions.Notify("Thank you for purchasing damage insurance")
 				WarMenu.CloseMenu()
