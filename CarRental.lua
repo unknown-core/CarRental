@@ -204,7 +204,7 @@ RegisterNetEvent('qb-rental:spawncar')
     local plate = GetVehicleNumberPlateText(vehicle)
 end)	
 	
-end)
+
 --Draw map blips
 Citizen.CreateThread(function()
 	while true do
