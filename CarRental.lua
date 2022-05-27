@@ -127,23 +127,22 @@ Citizen.CreateThread(function()
 		
 		elseif WarMenu.IsMenuOpened('carPicker') then
 			if WarMenu.Button('Faggio | Upfront: $100 | Daily: $100') then
-				TriggerServerEvent("chargePlayer", 100)
-
-
-				TriggerEvent("vehiclekeys:client:SetOwner", vehicleModel)
-
-				QBCore.Functions.Notify("You've been charged $100 for your rental.")
 				QBCore.Functions.SpawnVehicle(model, function(veh)
-					
+					TriggerServerEvent("chargePlayer", 100)
+
+
+					TriggerEvent("vehiclekeys:client:SetOwner", vehicleModel)
+
+					QBCore.Functions.Notify("You've been charged $100 for your rental.")
 					SpawnVehicle(model)
 					print(currentVehicle)
 					exports['LegacyFuel']:SetFuel(veh, 100)
 					TriggerEvent('vehiclekeys:client:SetOwner',  GetVehicleNumberPlateText(veh))
-				autoChargeAmount = 100
-				isBeingCharged = true
-				
-				WarMenu.CloseMenu()
+					autoChargeAmount = 100
+					isBeingCharged = true
 
+					WarMenu.CloseMenu()
+				end
 			elseif WarMenu.MenuButton('Back', 'carRental') then
 			end
 			
