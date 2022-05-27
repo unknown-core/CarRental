@@ -11,34 +11,6 @@ arrestCheckAlreadyRan = false
 isInPrison = false
 isBlipCreated = false
 
-RegisterNetEvent('qb-rental:openMenu', function()
-    exports['qb-menu']:openMenu({
-        {
-            header = "Rental Vehicles",
-            isMenuHeader = true,
-        },
-        {
-            id = 1,
-            header = "Return Vehicle ",
-            txt = "Return your rented vehicle.",
-            params = {
-                event = "qb-rental:return",
-            }
-        },
-        {
-            id = 1,
-            header = "Faggio",
-            txt = "$250.00",
-            params = {
-                event = "qb-rental:spawncar",
-                args = {
-                    model = 'faggio',
-                    money = 250,
-                }
-            }
-        },
-    })
-end)
 
 
 Citizen.CreateThread(function()
@@ -128,6 +100,7 @@ Citizen.CreateThread(function()
 		elseif WarMenu.IsMenuOpened('carPicker') then
 			if WarMenu.Button('Faggio | Upfront: $100 | Daily: $100') then
 					TriggerServerEvent("chargePlayer", 100)
+					TriggerServerEvent("qb-rental:spawncar")
 					QBCore.Functions.Notify("You've been charged $100 for your rental.")
 					SpawnVehicle(model)
 					autoChargeAmount = 100
@@ -154,7 +127,7 @@ Citizen.CreateThread(function()
 		elseif WarMenu.IsMenuOpened('carInsurance') then
 			if WarMenu.Button('Yes | $200') then
 				TriggerServerEvent("chargePlayer", 200)
-				TriggerServerEvent("qb-rental:spawncar")
+
 				damageInsurance = true
 				QBCore.Functions.Notify("Thank you for purchasing damage insurance")
 				WarMenu.CloseMenu()
