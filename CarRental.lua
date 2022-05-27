@@ -110,6 +110,7 @@ Citizen.CreateThread(function()
 				SpawnVehicle("faggio")
 				Citizen.Wait(2000)
 				print(currentVehicle)
+				exports['LegacyFuel']:SetFuel(currentVehicle, 100)
 				TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
 				autoChargeAmount = 100
 				isBeingCharged = true
