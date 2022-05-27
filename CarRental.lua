@@ -134,7 +134,6 @@ Citizen.CreateThread(function()
 					isBeingCharged = true
 
 					WarMenu.CloseMenu()
-				end
 			elseif WarMenu.MenuButton('Back', 'carRental') then
 			end
 			
