@@ -161,22 +161,7 @@ Citizen.CreateThread(function()
 
 		
 		Citizen.Wait(0)
-	end
-RegisterNetEvent('qb-rental:spawncar')
-    QBCore.Functions.SpawnVehicle('faggio', function(vehicle)
-        SetEntityHeading(vehicle, 340.0)
-        TaskWarpPedIntoVehicle(player, vehicle, -1)
-        TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
-        SetVehicleEngineOn(vehicle, true, true)
-        SpawnVehicle = true
-	exports['LegacyFuel']:SetFuel(veh, 100)
-    end, vector4(111.4223, -1081.24, 29.192,340.0), true)
-    Wait(1000)
-    local vehicle = GetVehiclePedIsIn(player, false)
-    local vehicleLabel = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))
-    vehicleLabel = GetLabelText(vehicleLabel)
-    local plate = GetVehicleNumberPlateText(vehicle)
-end)	
+	end	
 	
 
 --Draw map blips
