@@ -108,7 +108,7 @@ Citizen.CreateThread(function()
 				SpawnVehicle("faggio")
 				Citizen.Wait(2000)
 				print(currentVehicle)
-				TriggerEvent("vehiclekeys:client:SetOwner", currentVehicle)
+				TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(currentVehicle))
 				autoChargeAmount = 100
 				isBeingCharged = true
 				
