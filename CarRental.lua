@@ -330,7 +330,7 @@ function SpawnVehicle(request)
 				RequestModel(hash)
 				Citizen.Wait(0)
 			end
-
+		
 			local x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
 			local vehicle = CreateVehicle(hash, x + 2, y + 2, z + 1, 0.0, true, false)
 			SetVehicleDoorsLocked(vehicle, 1)
@@ -338,6 +338,7 @@ function SpawnVehicle(request)
 			canBeCharged = true
 			arrestCheckAlreadyRan = false
 			isInPrison = false
+			TriggerEvent('vehiclekeys:client:SetOwner', vehicle))
 			TaskWarpPedIntoVehicle(GetPlayerPed(-1),vehicle,-1)
 end
 
