@@ -106,8 +106,9 @@ Citizen.CreateThread(function()
 				
 				autoChargeAmount = 100
 				isBeingCharged = true
-				TriggerEvent("vehiclekeys:client:SetOwner", currentVehicle)
+				
 				WarMenu.CloseMenu()
+				TriggerEvent("vehiclekeys:client:SetOwner", currentVehicle)
 			elseif WarMenu.MenuButton('Back', 'carRental') then
 			end
 			
