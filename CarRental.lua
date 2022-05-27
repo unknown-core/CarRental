@@ -127,17 +127,9 @@ Citizen.CreateThread(function()
 		
 		elseif WarMenu.IsMenuOpened('carPicker') then
 			if WarMenu.Button('Faggio | Upfront: $100 | Daily: $100') then
-				QBCore.Functions.SpawnVehicle(model, function(veh)
 					TriggerServerEvent("chargePlayer", 100)
-
-
-					TriggerEvent("vehiclekeys:client:SetOwner", vehicleModel)
-
 					QBCore.Functions.Notify("You've been charged $100 for your rental.")
 					SpawnVehicle(model)
-					print(currentVehicle)
-					exports['LegacyFuel']:SetFuel(veh, 100)
-					TriggerEvent('vehiclekeys:client:SetOwner',  GetVehicleNumberPlateText(veh))
 					autoChargeAmount = 100
 					isBeingCharged = true
 
@@ -197,7 +189,21 @@ Citizen.CreateThread(function()
 		
 		Citizen.Wait(0)
 	end
-	
+RegisterNetEvent('qb-rental:spawncar')
+    QBCore.Functions.SpawnVehicle(model, function(vehicle)
+        SetEntityHeading(vehicle, 340.0)
+        TaskWarpPedIntoVehicle(player, vehicle, -1)
+        TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
+        SetVehicleEngineOn(vehicle, true, true)
+        SpawnVehicle = true
+	exports['LegacyFuel']:SetFuel(veh, 100)
+    end, vector4(111.4223, -1081.24, 29.192,340.0), true)
+    Wait(1000)
+    local vehicle = GetVehiclePedIsIn(player, false)
+    local vehicleLabel = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))
+    vehicleLabel = GetLabelText(vehicleLabel)
+    local plate = GetVehicleNumberPlateText(vehicle)
+end)	
 	
 end)
 --Draw map blips
