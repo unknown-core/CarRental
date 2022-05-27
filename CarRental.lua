@@ -310,8 +310,12 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(rentalTimer*60*1000)
 		if isBeingCharged == true and  IsPedInAnyVehicle(PlayerPedId()) then
-			TriggerServerEvent("chargePlayer", autoChargeAmount)
-			QBCore.Functions.Notify("You've been charged $" .. autoChargeAmount .. " on another day of your rental. Return the vehicle to stop the fees.")
+			local currentVehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+			local plate = GetVehicleNumberPlateText(currentVehicle)
+			if plate == " RENTAL " then
+				TriggerServerEvent("chargePlayer", autoChargeAmount)
+				QBCore.Functions.Notify("You've been charged $" .. autoChargeAmount .. " on another day of your rental. Return the vehicle to stop the fees.")
+			end
 		end
 	end
 end)
