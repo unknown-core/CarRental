@@ -100,9 +100,8 @@ Citizen.CreateThread(function()
 		elseif WarMenu.IsMenuOpened('carPicker') then
 			if WarMenu.Button('Faggio | Upfront: $100 | Daily: $100') then
 					TriggerServerEvent("chargePlayer", 100)
-					TriggerServerEvent("qb-rental:spawncar")
 					QBCore.Functions.Notify("You've been charged $100 for your rental.")
-					SpawnVehicle(model)
+					SpawnVehicle("Faggio")
 					autoChargeAmount = 100
 					isBeingCharged = true
 
@@ -127,7 +126,6 @@ Citizen.CreateThread(function()
 		elseif WarMenu.IsMenuOpened('carInsurance') then
 			if WarMenu.Button('Yes | $200') then
 				TriggerServerEvent("chargePlayer", 200)
-
 				damageInsurance = true
 				QBCore.Functions.Notify("Thank you for purchasing damage insurance")
 				WarMenu.CloseMenu()
