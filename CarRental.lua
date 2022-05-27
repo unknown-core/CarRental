@@ -336,7 +336,8 @@ function SpawnVehicle(request)
 			arrestCheckAlreadyRan = false
 			isInPrison = false
 			exports['LegacyFuel']:SetFuel(vehicle, 100)
-			TriggerEvent('vehiclekeys:client:SetOwner', vehicle)
+			
+			TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(vehicle))
 			TaskWarpPedIntoVehicle(GetPlayerPed(-1),vehicle,-1)
 end
 
