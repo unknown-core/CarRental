@@ -101,12 +101,12 @@ Citizen.CreateThread(function()
 				TriggerServerEvent("chargePlayer", 100)
 				local currentVehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
 				QBCore.Functions.Notify("You've been charged $100 for your rental.")
-				local vehicleModel = GetEntityModel(GetVehiclePedIsIn(PlayerPedId()))
+				
 				SpawnVehicle("faggio")
 				
 				autoChargeAmount = 100
 				isBeingCharged = true
-				
+				local vehicleModel = GetEntityModel(GetVehiclePedIsIn(PlayerPedId()))
 				WarMenu.CloseMenu()
 				TriggerEvent("vehiclekeys:client:SetOwner", vehicleModel)
 			elseif WarMenu.MenuButton('Back', 'carRental') then
