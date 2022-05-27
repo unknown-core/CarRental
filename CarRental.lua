@@ -1,4 +1,4 @@
-rentalTimer = .10 --How often a player should be charged in Minutes
+rentalTimer = .1 --How often a player should be charged in Minutes
 isBeingCharged = false
 autoChargeAmount = 100 -- How much a player should be charged each time
 local QBCore = exports['qb-core']:GetCoreObject()
