@@ -101,9 +101,6 @@ Citizen.CreateThread(function()
 			if WarMenu.Button('Faggio | Upfront: $100 | Daily: $100') then
 				SpawnVehicle("faggio")
 				Citizen.Wait(2000)
-				print(currentVehicle)
-				exports['LegacyFuel']:SetFuel(currentVehicle, 100)
-				TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
 				autoChargeAmount = 100
 				isBeingCharged = true
 			elseif WarMenu.MenuButton('Back', 'carRental') then
