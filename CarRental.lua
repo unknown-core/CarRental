@@ -190,7 +190,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 	end
 RegisterNetEvent('qb-rental:spawncar')
-    QBCore.Functions.SpawnVehicle(model, function(vehicle)
+    QBCore.Functions.SpawnVehicle('faggio', function(vehicle)
         SetEntityHeading(vehicle, 340.0)
         TaskWarpPedIntoVehicle(player, vehicle, -1)
         TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
