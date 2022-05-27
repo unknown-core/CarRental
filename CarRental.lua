@@ -11,6 +11,35 @@ arrestCheckAlreadyRan = false
 isInPrison = false
 isBlipCreated = false
 
+RegisterNetEvent('qb-rental:openMenu', function()
+    exports['qb-menu']:openMenu({
+        {
+            header = "Rental Vehicles",
+            isMenuHeader = true,
+        },
+        {
+            id = 1,
+            header = "Return Vehicle ",
+            txt = "Return your rented vehicle.",
+            params = {
+                event = "qb-rental:return",
+            }
+        },
+        {
+            id = 1,
+            header = "Asterope",
+            txt = "$250.00",
+            params = {
+                event = "qb-rental:spawncar",
+                args = {
+                    model = 'faggio',
+                    money = 250,
+                }
+            }
+        },
+    })
+end)
+
 
 Citizen.CreateThread(function()
 	
@@ -99,18 +128,17 @@ Citizen.CreateThread(function()
 		elseif WarMenu.IsMenuOpened('carPicker') then
 			if WarMenu.Button('Faggio | Upfront: $100 | Daily: $100') then
 				TriggerServerEvent("chargePlayer", 100)
-				local currentVehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
-				local ped = PlayerPedId()
-   				local veh = GetVehiclePedIsIn(ped)
+
 
 				TriggerEvent("vehiclekeys:client:SetOwner", vehicleModel)
 
 				QBCore.Functions.Notify("You've been charged $100 for your rental.")
-				
-				SpawnVehicle("faggio")
-				print(currentVehicle)
-				exports['LegacyFuel']:SetFuel(veh, 100)
-				TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
+				QBCore.Functions.SpawnVehicle(model, function(veh)
+					
+					SpawnVehicle(model)
+					print(currentVehicle)
+					exports['LegacyFuel']:SetFuel(veh, 100)
+					TriggerEvent('vehiclekeys:client:SetOwner',  GetVehicleNumberPlateText(veh))
 				autoChargeAmount = 100
 				isBeingCharged = true
 				
